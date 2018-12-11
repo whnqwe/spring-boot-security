@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-<form id="form" method="post" action="/login">
+<form id="form" method="post" action="/loginAction">
     <label>用户名：</label><input type="text" name="name" value="" />
     <label>密码：</label><input type="text" name="pwd" value="" />
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
