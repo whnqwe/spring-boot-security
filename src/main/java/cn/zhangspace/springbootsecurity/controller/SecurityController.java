@@ -1,6 +1,7 @@
 package cn.zhangspace.springbootsecurity.controller;
 
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,16 @@ public class SecurityController {
         return "login";
     }
 
+    @GetMapping("/error")
+    public String error(){
+       return  "error";
+    }
+
+    @GetMapping("/admin")
+    @Secured("ROLE_ADMIN")
+    public String admin(){
+        return "admin";
+    }
     @GetMapping("/xss")
     public String xss(Model model) {
 
